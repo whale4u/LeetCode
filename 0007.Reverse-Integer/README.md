@@ -29,3 +29,8 @@
 提示：
 
 -2^31 <= x <= 2^31 - 1
+
+
+## 参考文章
+- https://github.com/halfrost/LeetCode-Go
+- https://leetcode-cn.com/problems/reverse-integer/
