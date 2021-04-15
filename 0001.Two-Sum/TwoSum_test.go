@@ -1,62 +1,52 @@
 package gotest
 
 import (
-	"fmt"
+	"reflect"
 	"testing"
 )
 
-type question1 struct {
-	para1
-	ans1
-}
+// func TestTwoSum(t *testing.T) {
+// 	type args struct {
+// 		nums   []int
+// 		target int
+// 	}
+// 	tests := []struct {
+// 		name string
+// 		args args
+// 		want []int
+// 	}{
+// 		// TODO: Add test cases.
+// 		{"1", args{[]int{3, 2, 4}, 6}, []int{1, 2}},
+// 		{"2", args{[]int{3, 2, 4}, 5}, []int{0, 1}},
+// 	}
+// 	for _, tt := range tests {
+// 		t.Run(tt.name, func(t *testing.T) {
+// 			if got := TwoSum(tt.args.nums, tt.args.target); !reflect.DeepEqual(got, tt.want) {
+// 				t.Errorf("TwoSum() = %v, want %v", got, tt.want)
+// 			}
+// 		})
+// 	}
+// }
 
-// para 是参数
-// one 代表第一个参数
-type para1 struct {
-	nums   []int
-	target int
-}
-
-// ans 是答案
-// one 代表第一个答案
-type ans1 struct {
-	one []int
-}
-
-func Test_TwoSum_1(t *testing.T) {
-	qs := []question1{
-		{
-			para1{[]int{3, 2, 4}, 6},
-			ans1{[]int{1, 2}},
-		},
-
-		{
-			para1{[]int{3, 2, 4}, 5},
-			ans1{[]int{0, 1}},
-		},
-
-		{
-			para1{[]int{0, 8, 7, 3, 3, 4, 2}, 11},
-			ans1{[]int{1, 3}},
-		},
-
-		{
-			para1{[]int{0, 1}, 1},
-			ans1{[]int{0, 1}},
-		},
-
-		{
-			para1{[]int{0, 3}, 5},
-			ans1{[]int{}},
-		},
-		// 如需多个测试，可以复制上方元素。
+func TestTwoSum1(t *testing.T) {
+	type args struct {
+		nums   []int
+		target int
 	}
-
-	fmt.Printf("------------------------Leetcode Problem 1------------------------\n")
-
-	for _, q := range qs {
-		_, p := q.ans1, q.para1
-		fmt.Printf("【input】:%v       【output】:%v\n", p, TwoSum(p.nums, p.target))
+	tests := []struct {
+		name string
+		args args
+		want []int
+	}{
+		// TODO: Add test cases.
+		{"1", args{[]int{3, 2, 4}, 6}, []int{1, 2}},
+		// {"2", args{[]int{3, 2, 4}, 5}, []int{0, 1}},
 	}
-	fmt.Printf("\n\n\n")
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := TwoSum1(tt.args.nums, tt.args.target); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("TwoSum1() = %v, want %v", got, tt.want)
+			}
+		})
+	}
 }
