@@ -8,16 +8,14 @@ func bubbleSort(nums []int) []int {
 	}
 
 	// 冒泡排序核心实现代码
-	for i := 0; i < len(nums); i++ {
-		flag := false
-		for j := 0; j < len(nums)-i-1; j++ {
+	length := len(nums)
+	for i := 0; i < length; i++ {
+		for j := 0; j < length-i-1; j++ {
 			if nums[j] > nums[j+1] {
-				nums[j], nums[j+1] = nums[j+1], nums[j]
-				flag = true
+				tmp := nums[j]
+				nums[j] = nums[j+1]
+				nums[j+1] = tmp
 			}
-		}
-		if !flag {
-			break
 		}
 	}
 
