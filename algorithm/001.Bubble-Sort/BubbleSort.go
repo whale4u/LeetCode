@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package gotest
 
 func bubbleSort(nums []int) []int {
 	if len(nums) <= 1 {
@@ -22,10 +20,4 @@ func bubbleSort(nums []int) []int {
 	}
 
 	return nums
-}
-
-func main() {
-	nums := []int{4, 5, 6, 7, 8, 3, 2, 1}
-	nums = bubbleSort(nums)
-	fmt.Println(nums)
 }
