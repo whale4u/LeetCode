@@ -13,6 +13,7 @@ func Test_reverse(t *testing.T) {
 	}{
 		// TODO: Add test cases.
 		{"1", args{4294967296}, 0},
+		{"1", args{-4294967296}, 0},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
